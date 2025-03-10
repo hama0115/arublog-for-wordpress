@@ -1,0 +1,409 @@
+@charset "UTF-8";
+/* 
+Theme Name: アルゴリズムテーマ
+Description: アルゴリズム用のテーマ
+Version: 1.0
+Author: A.Akiyoshi
+*/
+
+/* SPファーストで記述
+    marginは基本はtopにかけるが、デザインの都合上ボトムにかけたい場合は「margin-bottom」を使う
+*/
+
+/* ========================
+全体
+======================== */
+
+/*
+リセットCSSで変わっていない部分をリセット
+およびフォントなど全体に関わる部分を変更
+*/
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* トランジションを滑らかに */
+  transition-duration: 0.3s;
+}
+/* リンクホバー時にテキストカラーを変更 */
+a:hover {
+  color: #d4d4d4;
+}
+
+body {
+  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5;
+  background-color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article-title {
+  font-family: dnp-shuei-gothic-gin-std, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ========================
+ヘッダー
+======================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  background-color: #fff;
+}
+
+.header-inner {
+  position: relative;
+  height: 70px;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  display: inline-block;
+  color: #A0D8EF;
+}
+.btn-menu {
+  display: block;
+  width: 44px;
+  height: 34px;
+  background-image: url(./img/icon-menu.png);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: solid 2px #000;
+  border-radius: 0;
+  outline: none;
+}
+.site-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  background-color: #A0D8EF;
+  overflow-x: hidden;
+  width: 0;
+  transition-duration: 0.5s;
+}
+.site-menu.open-menu {
+  width: 100%;
+}
+.site-menu ul li {
+  margin: 2rem 0;
+}
+.site-menu ul li a {
+  display: inline-block;
+  padding: 1em 3em;
+  white-space: nowrap;
+}
+.site-menu ul li a:hover {
+  color: #A0D8EF;
+  background-color: #fff;
+}
+
+/* ========================
+メイン
+======================== */
+.main {
+  padding: 70px 20px 2rem;
+}
+/* コンテンツをはみ出ないようにする、および中央揃えに */
+.content-wrapper {
+  width: clamp(335px, 85%, 900px);
+  margin: auto;
+}
+
+/*---- アーカイブページ ----*/
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.article-list li a {
+  display: block;
+  overflow: hidden;
+}
+.article-list li a:hover .thumbnail img{
+  transform: scale(1.05);
+}
+.thumbnail {
+  overflow: hidden;
+}
+.thumbnail img {
+  transition-duration: 0.3s;
+}
+.text {
+  padding: 0.75rem 0 2rem;
+}
+.entry-date {
+  font-size: 0.75rem;
+  margin: 0 0 0 1em;
+  color: #d4d4d4;
+}
+.article-title {
+  font-size: 1rem;
+  margin-top: 0.67em;
+}
+.category-list {
+  display: flex;
+  margin-top: 1.33em;
+}
+.category {
+  font-size: 0.625rem;
+  padding: 0.5em 1em;
+  border: solid 1px #A0D8EF;
+  border-radius: 20px;
+  color: #A0D8EF;
+  font-weight: 400;
+}
+.category-list p:not(.category-list p:first-child) {
+  margin-left: 1em;
+}
+
+/*-- プロフィール欄 --*/
+
+.profile-top {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+.profile-img-area {
+  text-align: center;
+  position: relative;
+}
+.profile-img-area img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.profile-img-area p {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0 1em;
+  background-color: #fff;
+  border: solid 1px #000;
+}
+.profile-description {
+  margin-top: 1em;
+  line-height: 2;
+}
+
+/*-- 個別投稿ページ --*/
+
+.single-article .article-title {
+  font-size: 1.25rem;
+  margin-top: 1em;
+}
+.single-article .entry-date {
+  margin: 1em 0 0 0.5em;
+}
+.single-article .category-list {
+  margin: 0.5em 0 0 0.5em;
+}
+.single-article .category {
+  padding: 0 1em;
+}
+
+.eyecatch-area {
+  padding-top: 1rem;
+}
+
+.article-h2 {
+  font-size: 1.25rem;
+  margin: 3rem 0 1em 0;
+  padding: 0 0 0.6em 1em;
+  border-bottom: solid 1px #A0D8EF;
+}
+.article-h3 {
+  font-size: 1rem;
+  margin: 3em 0 1.5em 0;
+  padding-left: 1em;
+  border-left: solid 2px #A0D8EF;
+}
+.article-p {
+  margin-bottom: 2em;
+}
+.article-img-area img {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.page-link {
+  display: flex;
+  justify-content: space-between;
+}
+.prev-page-link {
+  padding: 0.5em 1em;
+  border: solid 1px #000;
+  border-radius: 20px;
+}
+.prev-page-link::before {
+  content: '<';
+}
+.next-page-link {
+  padding: 0.5em 1em;
+  border: solid 1px #000;
+  border-radius: 20px;
+}
+.next-page-link::after {
+  content: '>';
+}
+
+.latest-pages {
+  padding: 3em 0 1em;
+}
+.latest-pages-title {
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+  padding-left: 0.5em;
+  border-left: solid 2px #A0D8EF;
+}
+.latest-pages ul li {
+  margin: 0.625em 0.625em 0 1em ;
+}
+
+/* ========================
+フッター
+======================== */
+.footer {
+  text-align: center;
+  padding: 3rem 0 1rem;
+  color: #fff;
+  background-color: #A0D8EF;
+}
+.footer a {
+  font-size: 1.5rem;
+}
+.copyright {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  /* ========================
+  全体
+  ======================== */
+
+  /* 基本フォントをPCサイズでは大きく */
+  body {
+    font-size: 18px;
+  }
+
+  .single-article img {
+    max-width: 85%
+  }
+
+  /* ========================
+  ヘッダー
+  ======================== */
+  .header {
+    position: static;
+  }
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  .btn-menu {
+    display: none;
+  }
+  .site-menu {
+    /* SP時のCSSを変更 */
+    position: static;
+    color: #000;
+    background-color: #fff;
+    width: auto;
+  }
+  .site-menu ul {
+    display: flex;
+  }
+  .site-menu ul li {
+    margin: 0 2em;
+  }
+  .site-menu ul li a {
+    white-space: nowrap;
+    padding: 0.5em 1em;
+  }
+  .site-menu ul li a:hover {
+    color: #fff;
+    background-color: #A0D8EF;
+  }
+
+  /* ========================
+  メイン
+  ======================== */
+  .main {
+    padding: 0 0 2rem;
+  }
+
+  /*---- アーカイブページ ----*/
+  .title {
+    margin: 2rem 0 1rem;
+  }
+
+  .article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .article-list li {
+    flex-shrink: 0;
+    width: calc((100% - 100px) / 3);
+  }
+
+  /*---- 個別投稿ページ --*/
+  .single-article .article-title {
+    margin-top: 2em;
+  }
+  .eyecatch-area {
+    text-align: center;
+  }
+  .article-img-area {
+    text-align: center;
+  }
+
+  .latest-pages-title {
+    font-size: 1.2rem;
+  }
+
+}
