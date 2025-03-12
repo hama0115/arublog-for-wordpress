@@ -10,7 +10,7 @@
             <div class="title-area">
               <h1 class="article-title"><?php the_title(); ?></h1>
               <div class="entry-date"><?php the_date(); ?></div>
-              <?php
+              <?php /* カテゴリーをリンクなしで表示 */
               $cats = get_the_category();
               if($cats):
               ?>
@@ -29,9 +29,14 @@
               <?php the_content(); ?>
             </div>
 
-            <div class="page-link">
-              <p class="prev-page-link"><?php previous_post_link(); ?></p>
-              <p class="next-page-link"><?php next_post_link(); ?></p>
+            <div class="page-link"><!-- 前後の記事がある場合はリンクを表示 -->
+              <?php if( get_previous_post() ): ?>
+                <p class="prev-page-link"><?php previous_post_link(); ?></p>
+              <?php endif; ?>
+              
+              <?php if( get_next_post() ): ?>
+                <p class="next-page-link"><?php next_post_link(); ?></p>
+              <?php endif; ?>
             </div>
           </article>
 
