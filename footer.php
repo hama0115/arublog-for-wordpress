@@ -7,9 +7,6 @@
 
     <!-- JavaScript -->
 
-      <!-- ハンバーガーメニュー -->
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/btn-menu.js"></script>
-
       <!-- adobeフォント -->
       <script>
         (function (d) {

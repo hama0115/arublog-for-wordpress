@@ -17,7 +17,7 @@ Author: A.Akiyoshi
 /*
 リセットCSSで変わっていない部分をリセット
 およびフォントなど全体に関わる部分を変更
- */
+*/
  *,
  ::before,
  ::after {
@@ -280,6 +280,8 @@ Author: A.Akiyoshi
    padding: 0.5em 1em;
    border: solid 1px #000;
    border-radius: 20px;
+   max-width: 200px;
+   text-align: center;
  }
  .prev-page-link::before {
    content: '<';
@@ -288,6 +290,8 @@ Author: A.Akiyoshi
    padding: 0.5em 1em;
    border: solid 1px #000;
    border-radius: 20px;
+   max-width: 200px;
+   text-align: center;
  }
  .next-page-link::after {
    content: '>';
@@ -335,7 +339,8 @@ Author: A.Akiyoshi
    }
  
    .single-article img {
-     max-width: 85%
+     max-width: 85%;
+     height: auto;
    }
  
    /* ========================
