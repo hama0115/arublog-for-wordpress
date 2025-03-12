@@ -239,8 +239,10 @@ Author: A.Akiyoshi
  .single-article .entry-date {
    margin: 1em 0 0 0.5em;
  }
+
+ /* カテゴリのCSSはアーカイブページのほうでベースを調節しているので注意 */
  .single-article .category-list {
-   margin: 0.5em 0 0 0.5em;
+   margin: 0.5em 0 0.5em 0.5em;
  }
  .single-article .category {
    padding: 0 1em;
