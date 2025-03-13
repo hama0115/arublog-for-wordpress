@@ -10,18 +10,17 @@
 
               <li>
                 <a href="<?php the_permalink(); ?>" >
+                
+                <div class="thumbnail-area">
+                  <?php
+                  if(has_post_thumbnail()):
+                    the_post_thumbnail('full');
 
-                <?php
-                if(has_post_thumbnail()):
-                  $attr = array(
-                    'class' => 'thumbnail',
-                  );
-                  the_post_thumbnail('', $attr);
+                  else: ?>
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post-thumbnail.jpg" alt="ダミーのサムネイル">
 
-                else: ?>
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post-thumbnail.jpg" alt="ダミーのサムネイル">
-
-                <?php endif; ?>
+                  <?php endif; ?>
+                </div>
                 
                   <div class="text">
                     <time class="entry-date"><?php echo get_the_date(); ?></time>

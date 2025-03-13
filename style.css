@@ -160,13 +160,13 @@ Author: A.Akiyoshi
    display: block;
    overflow: hidden;
  }
- .article-list li a:hover .thumbnail img{
-   transform: scale(1.05);
+ .article-list li a:hover .thumbnail-area img{
+  transform: scale(1.05);
  }
- .thumbnail {
+ .thumbnail-area {
    overflow: hidden;
  }
- .thumbnail img {
+ .thumbnail-area img {
    transition-duration: 0.3s;
  }
  .text {
