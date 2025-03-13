@@ -3,7 +3,7 @@
     <main class="main">    
       <div class="content-wrapper">
         <div class="content">
-          <h1 class="title">最新の記事</h1>
+          <h1 class="page-title">ホーム</h1>
           <div class="article-list-wrapper">
             <ul class="article-list">
               <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
@@ -45,15 +45,25 @@
               <?php endif; ?>
             </ul>
           </div>
-          <section class="profile-area">
+
+          <section class="profile-area"> <!-- 著者のプロフィール情報 「CFT」使用 -->
             <h2 class="profile-top">プロフィール</h2>
             <div class="profile-img-area">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/fluffy-mountain-goat.jpg" alt="プロフィール画像">
+              <?php //プロフィール画像を取得
+              $img_attr = wp_get_attachment_image_src(post_custom('profile-image'), 'full');
+              if($img_attr):
+              ?>
+              <img src="<?php echo $img_attr[0]; ?>">
+              <?php endif; ?>
               <div class="profile-name-wrapper">
-                <p class="profile-name">アル</p>
+                <?php if(post_custom('profile-name')): //著者の名前を取得 ?>
+                <p class="profile-name"><?php echo esc_html(post_custom('profile-name')); ?></p>
+                <?php endif; ?>
               </div>
             </div>
-            <p class="profile-description">ここにプロフィール文が入りますここにプロフィール文が入りますここにプロフィール文が入りますここにプロフィール文が入ります</p>
+            <?php if(post_custom('profile-description')): //著者の概要を取得 ?>
+            <p class="profile-description"><?php echo esc_html(post_custom('profile-description')); ?></p>
+            <?php endif; ?>
           </section>
         </div>
       </div>  
