@@ -1,0 +1,15 @@
+              <li>
+                <a href="./single.html">
+                  <div class="thumbnail">
+                    <img src="./img/fluffy-mountain-goat.jpg" alt="ヤギヤギ男">
+                  </div>
+                  <div class="text">
+                    <time class="entry-date" datetime="2025-2-18">2025年2月18日</time>
+                    <p class="article-title">ここにタイトルが入りますここにタイトルが入りますここにタイトルが入ります</p>
+                    <div class="category-list">
+                      <p class="category">カテゴリー1</p>
+                      <p class="category">カテゴリー2</p>
+                    </div>
+                  </div>
+                </a>
+              </li>

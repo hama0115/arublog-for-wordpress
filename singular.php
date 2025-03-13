@@ -18,7 +18,7 @@
               ?>
                 <ul class="category-list">
                 <?php foreach($cats as $cat): ?>
-                  <li class="category"><?php echo $cat->name; ?></li>
+                  <li class="article-category"><?php echo $cat->name; ?></li>
                 <?php endforeach; ?>
                 </ul>
               <?php endif; ?>
