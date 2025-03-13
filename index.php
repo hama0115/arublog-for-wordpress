@@ -16,7 +16,7 @@
                   $attr = array(
                     'class' => 'thumbnail',
                   );
-                  the_post_thumbnail('thumbnail', $attr);
+                  the_post_thumbnail('', $attr);
 
                 else: ?>
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/post-thumbnail.jpg" alt="ダミーのサムネイル">
