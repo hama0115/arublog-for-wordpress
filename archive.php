@@ -24,7 +24,7 @@
                 <?php endif; ?>
                 
                   <div class="text">
-                    <div class="entry-date"><?php the_date(); ?></div>
+                    <time class="entry-date"><?php echo get_the_date(); ?></time>
                     <p class="article-title"><?php the_title(); ?></p>
 
                     <?php /* カテゴリーをリンクなしで表示 */

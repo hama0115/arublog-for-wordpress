@@ -10,7 +10,7 @@
             <div class="title-area">
 
               <h1 class="article-title"><?php the_title(); ?></h1>
-              <div class="entry-date"><?php the_date(); ?></div>
+              <time class="entry-date"><?php echo get_the_date(); ?></time>
 
               <?php /* カテゴリーをリンクなしで表示 */
               $cats = get_the_category();
