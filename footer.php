@@ -1,5 +1,5 @@
     <footer class="footer">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo">アルブログ</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo"><?php bloginfo('name'); ?></a>
       <p class="copyright">2025 arublog.com all right reserved.</p>
     </footer>
 
