@@ -79,17 +79,8 @@
               endif ;
             }?>
           </section>
-          <?php echo do_shortcode('[pad]'); ?>
-          <section class="profile-area">
-            <h2 class="profile-top">プロフィール</h2>
-            <div class="profile-img-area">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/fluffy-mountain-goat.jpg" alt="プロフィール画像">
-              <div class="profile-name-wrapper">
-                <p class="profile-name">アル</p>
-              </div>
-            </div>
-            <p class="profile-description">ここにプロフィール文が入りますここにプロフィール文が入りますここにプロフィール文が入りますここにプロフィール文が入ります</p>
-          </section>
+          
+          <?php get_template_part( 'template-parts/author-profile' ); ?>
         </div>
       </div>
     </main>
