@@ -79,6 +79,7 @@
               endif ;
             }?>
           </section>
+          <?php echo do_shortcode('[pad]'); ?>
           <section class="profile-area">
             <h2 class="profile-top">プロフィール</h2>
             <div class="profile-img-area">
